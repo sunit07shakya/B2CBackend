@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from marketplace.models.product import Product, ProductCategory
 from marketplace.models.inventory import Inventory
+from marketplace.serializers.company_serializer import CompanySerializer
+from marketplace.serializers.inventory_serializer import InventorySerializer
 
 
 class ProductCategorySerializer(serializers.ModelSerializer):
@@ -11,25 +13,10 @@ class ProductCategorySerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     category = ProductCategorySerializer(read_only=True)
+    inventories = InventorySerializer(many=True, read_only=True) 
 
     class Meta:
         model = Product
-        fields = ["id", "name", "description", "category", "images", "created_at"]
+        fields = ["id", "name", "description", "category","inventories", "images", "created_at"]
 
 
-class InventorySerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)
-
-    class Meta:
-        model = Inventory
-        fields = [
-            "id",
-            "product",
-            "company",
-            "stock_quantity",
-            "selling_price",
-            "min_selling_price",
-            "max_selling_price",
-            "is_available",
-            "created_at"
-        ]

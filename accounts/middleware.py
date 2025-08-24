@@ -16,7 +16,7 @@ class JWTAuthenticationMiddleware(MiddlewareMixin):
         self.excluded_paths = [
             r'^/api/login/$',       # Exclude login endpoint
             r'^/api/register/$',    # Exclude register endpoint
-            r'^/api/marketplace/products/$',  # Exclude products api
+            r'^/api/marketplace/products/.*$',  # Exclude products api
             r'^/api/marketplace/categories/$',  # Exclude categories api
             r'^/admin/.*$',    # Exclude all endpoints under /api/public/
             r'^/media/documents/.*$', 

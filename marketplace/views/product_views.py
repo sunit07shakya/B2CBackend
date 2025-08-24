@@ -10,3 +10,8 @@ class ProductListView(generics.ListCreateAPIView):
 class CategoryListView(generics.ListCreateAPIView):
     queryset = ProductCategory.objects.all()
     serializer_class = ProductCategorySerializer
+
+
+class ProductDetailView(generics.RetrieveAPIView):
+    queryset = Product.objects.all().prefetch_related("inventories")
+    serializer_class = ProductSerializer
