@@ -161,3 +161,4 @@ media/*
 .DS_Store
 
 migrations/
+.env
