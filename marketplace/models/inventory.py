@@ -10,6 +10,8 @@ class Inventory(models.Model):
     min_selling_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     max_selling_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     is_available = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=False)
+    is_flash_sale = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -3,12 +3,7 @@ from marketplace.models.product import Product, ProductCategory
 from marketplace.models.inventory import Inventory
 from marketplace.serializers.company_serializer import CompanySerializer
 from marketplace.serializers.inventory_serializer import InventorySerializer
-
-
-class ProductCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ProductCategory
-        fields = ["id", "name", "parent"]
+from marketplace.serializers.category_serializer import ProductCategorySerializer
 
 
 class ProductSerializer(serializers.ModelSerializer):

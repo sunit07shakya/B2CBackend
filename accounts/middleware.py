@@ -20,6 +20,7 @@ class JWTAuthenticationMiddleware(MiddlewareMixin):
             r'^/api/marketplace/categories/$',  # Exclude categories api
             r'^/admin/.*$',    # Exclude all endpoints under /api/public/
             r'^/media/documents/.*$', 
+            r'^/api/marketplace/landing/.*$', 
         ]
 
     def __call__(self, request):
