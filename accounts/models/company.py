@@ -13,7 +13,7 @@ class Company(models.Model):
     logo = models.ImageField(upload_to="company_logos/", blank=True, null=True)
     website = models.URLField(blank=True, null=True)
     established_year = models.PositiveIntegerField(blank=True, null=True)
-
+    city = models.CharField(max_length=255, blank=True, null=True)
     # Compliance / Business details
     gst_number = models.CharField(max_length=20, blank=True, null=True, unique=True)
     pan_number = models.CharField(max_length=10, blank=True, null=True, unique=True)
