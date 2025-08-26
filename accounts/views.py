@@ -13,7 +13,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 # serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from .serializers import CustomTokenObtainPairSerializer
+from .serializers.account_serializer import CustomTokenObtainPairSerializer
 
 
 # Login API

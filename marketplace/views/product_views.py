@@ -34,7 +34,7 @@ class ProductListView(generics.ListAPIView):
         # 🌍 City filter (from company model)
         city = self.request.query_params.get("city")
         if city:
-            queryset = queryset.filter(inventories__company__city__icontains=city)
+            queryset = queryset.filter(inventories__company__addresses__city__icontains=city)
 
         return queryset.distinct()
 
