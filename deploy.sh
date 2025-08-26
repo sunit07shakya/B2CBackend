@@ -33,6 +33,11 @@ echo "📦 Installing dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Run mamke migrations
+echo "🗄️ Running Django make migrations..."
+python $MANAGE_PY makemigrations --noinput
+
+
 # Run migrations
 echo "🗄️ Running Django migrations..."
 python $MANAGE_PY migrate --noinput
