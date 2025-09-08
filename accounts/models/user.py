@@ -9,7 +9,7 @@ class CustomUser(AbstractUser):
         ('admin', 'Admin'),
     )
 
-    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES)
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES,default="buyer")
     phone = models.CharField(max_length=15, blank=True, null=True, unique=True)
     country_code = models.CharField(max_length=5, blank=True, null=True)  # e.g., +91
     alternate_email = models.EmailField(blank=True, null=True)

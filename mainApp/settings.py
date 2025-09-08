@@ -242,3 +242,18 @@ LOGGING = {
 SECRET_KEY = '64B2Z7kYnvV0bWIK'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# settings.py
+
+# Email backend
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+# Default sender (used in OTP serializer)
+DEFAULT_FROM_EMAIL = "bharatbbteam@gmail.com"
+
+# SMTP config
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "bharatbbteam@gmail.com"
+EMAIL_HOST_PASSWORD = "mpql drmb qblb kchj" 

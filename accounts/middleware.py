@@ -14,7 +14,8 @@ class JWTAuthenticationMiddleware(MiddlewareMixin):
 
         # Define URL patterns to exclude from token verification
         self.excluded_paths = [
-            r'^/api/login/$',       # Exclude login endpoint
+            r'^/api/accounts/login/$',       # Exclude login endpoint
+            r'^/api/accounts/send-otp/$',       # Exclude send-otp endpoint
             r'^/api/register/$',    # Exclude register endpoint
             r'^/api/marketplace/products/.*$',  # Exclude products api
             r'^/api/marketplace/cart/.*$',  # Exclude cart api
