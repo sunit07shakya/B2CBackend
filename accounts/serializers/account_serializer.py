@@ -61,7 +61,7 @@ class LoginSerializer(serializers.Serializer):
         # Case 2: Email + OTP
         elif otp:
             session_email = request.session.get("otp_email")
-            session_otp = request.session.get("otp_email")
+            session_otp = request.session.get("email_otp")
             session_expiry = request.session.get("otp_expiry")
 
             if not session_email or not session_otp:
