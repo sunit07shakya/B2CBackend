@@ -204,6 +204,8 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
