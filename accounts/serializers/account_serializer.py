@@ -21,8 +21,8 @@ class SendOTPSerializer(serializers.Serializer):
         otp = random.randint(100000, 999999)
 
         # Store OTP in session
-        request.session["email_otp"] = otp
-        request.session["otp_email"] = email
+        request.session["otp"] = otp
+        request.session["otp_on_email"] = email
         request.session["otp_expiry"] = (timezone.now() + timezone.timedelta(minutes=5)).isoformat()
 
         # --- Email sending logic ---
@@ -60,8 +60,8 @@ class LoginSerializer(serializers.Serializer):
 
         # Case 2: Email + OTP
         elif otp:
-            session_email = request.session.get("otp_email")
-            session_otp = request.session.get("email_otp")
+            session_email = request.session.get("otp_on_email")
+            session_otp = request.session.get("otp")
             session_expiry = request.session.get("otp_expiry")
 
             if not session_email or not session_otp:
